@@ -5,7 +5,11 @@
   "description": "Crea un túnel SSH inverso para acceder a Home Assistant desde un VPS.",
   "startup": "system",
   "boot": "auto",
-  "arch": ["amd64", "armv7", "aarch64"],
+  "arch": [
+    "amd64",
+    "armv7",
+    "aarch64"
+  ],
   "image": "tu_usuario/tunnel-ssh-homeassistant",
   "map": ["config:rw"],
   "options": {
