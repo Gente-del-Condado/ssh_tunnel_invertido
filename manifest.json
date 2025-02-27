@@ -10,7 +10,6 @@
     "armv7",
     "aarch64"
   ],
-  "image": "tu_usuario/tunnel-ssh-homeassistant",
   "map": ["config:rw"],
   "options": {
     "vps_host": "",
