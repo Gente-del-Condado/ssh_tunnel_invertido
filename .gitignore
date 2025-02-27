@@ -1,0 +1,15 @@
+# Ignorar archivos temporales y de compilación
+*.log
+*.bak
+*.swp
+
+# Ignorar claves privadas y otros archivos sensibles
+/config/ssl/
+*.pem
+*.key
+*.crt
+
+# Ignorar directorios de compilación
+node_modules/
+.env
+.DS_Store

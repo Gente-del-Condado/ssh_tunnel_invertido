@@ -1,0 +1,10 @@
+/ssh_tunnel_invertido/
+│── Dockerfile
+│── config.yaml
+│── run.sh
+│── panel/
+│   ├── panel.js
+│   
+│── manifest.json
+│── icon.png (opcional)
+│── logo.png (opcional)

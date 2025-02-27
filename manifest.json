@@ -1,0 +1,11 @@
+{
+    "name": "Túnel SSH Inverso",
+    "version": "1.0",
+    "slug": "ssh_tunnel_invertido",
+    "description": "Permite configurar un túnel SSH inverso desde Home Assistant.",
+    "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+    "startup": "system",
+    "boot": "auto",
+    "panel_icon": "mdi:ssh",
+    "panel_title": "Túnel SSH"
+}  

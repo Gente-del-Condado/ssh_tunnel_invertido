@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Control del Túnel SSH</title>
+    <script>
+        function sendCommand(action) {
+            fetch("http://casapruebas.local:8099/index.cgi?action=" + action)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("status").innerText = data;
+                });
+        }
+
+        function getStatus() {
+            fetch("http://casapruebas.localindex.cgi?action=status")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("status").innerText = "Estado: " + data;
+                });
+        }
+
+        setInterval(getStatus, 5000);
+    </script>
+</head>
+<body>
+    <h1>Control del Túnel SSH</h1>
+    <button onclick="sendCommand('start')">Iniciar</button>
+    <button onclick="sendCommand('stop')">Detener</button>
+    <button onclick="sendCommand('restart')">Reiniciar</button>
+    <h2 id="status">Estado: Desconocido</h2>
+</body>
+</html>
