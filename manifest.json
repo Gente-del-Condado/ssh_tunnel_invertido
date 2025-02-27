@@ -1,11 +1,31 @@
 {
-    "name": "Túnel SSH Inverso",
-    "version": "1.0",
-    "slug": "ssh_tunnel_invertido",
-    "description": "Permite configurar un túnel SSH inverso desde Home Assistant.",
-    "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
-    "startup": "system",
-    "boot": "auto",
-    "panel_icon": "mdi:ssh",
-    "panel_title": "Túnel SSH"
-}  
+  "name": "Túnel SSH Inverso",
+  "version": "1.0",
+  "slug": "ssh_tunnel_invertido",
+  "description": "Crea un túnel SSH inverso para acceder a Home Assistant desde un VPS.",
+  "startup": "system",
+  "boot": "auto",
+  "arch": ["amd64", "armv7", "aarch64"],
+  "image": "tu_usuario/tunnel-ssh-homeassistant",
+  "map": ["config:rw"],
+  "options": {
+    "vps_host": "",
+    "vps_port": 22,
+    "vps_user": "",
+    "vps_password": "",
+    "remote_port": 2222,
+    "local_port": 8123,
+    "retry_interval": 10,
+    "http_port": 8099
+  },
+  "schema": {
+    "vps_host": "str",
+    "vps_port": "int",
+    "vps_user": "str",
+    "vps_password": "password?",
+    "remote_port": "int",
+    "local_port": "int",
+    "retry_interval": "int",
+    "http_port": "int"
+  }
+}
