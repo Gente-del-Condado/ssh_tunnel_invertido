@@ -10,12 +10,13 @@ RUN mkdir -p /data && chmod 700 /data
 COPY run.sh /run.sh
 RUN chmod +x /run.sh
 
-# Definir el punto de entrada
-CMD ["/bin/sh", "/run.sh", "start"]
-
 # Copiar el servidor HTTP
 COPY server.sh /server.sh
 RUN chmod +x /server.sh
 
-# Definir el punto de entrada
-CMD ["/bin/sh", "/server.sh"]
+# Crear el script de inicio
+COPY start.sh /start.sh
+RUN chmod +x /start.sh
+
+# Definir el punto de entrada para ejecutar el nuevo script
+CMD ["/bin/sh", "/start.sh"]
