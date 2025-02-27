@@ -1,5 +1,3 @@
-{
-    "name": "Home Assistant Túnnel SSH invertido",
-    "url": "https://github.com/Gente-del-Condado/ssh_tunnel_invertido",
-    "maintainer": "Gente del Condado <gente.del.condado.jaen@gmail.com>"
-}
+name: Home Assistant Túnnel SSH invertido
+url: 'https://github.com/Gente-del-Condado/ssh_tunnel_invertido'
+maintainer: Gente del Condado <gente.del.condado.jaen@gmail.com>
