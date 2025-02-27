@@ -12,7 +12,7 @@ arch:
 image: "wolfbelmi88/ssh_tunnel_invertido:latest"
 
 map:
-  - config:rw # Permite almacenar claves SSH y logs
+  - config:rw
 
 options:
   vps_host: ""
