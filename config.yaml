@@ -1,7 +1,7 @@
 name: "Túnel SSH Inverso"
 version: "1.0"
 slug: "ssh_tunnel_invertido"
-description: "Crea un túnel SSH inverso para acceder a Home Assistant desde un VPS."
+description: "Crea un túnel SSH inverso para acceder a Home Assistant desde un VPS. Ideal para acceder a servicios locales sin necesidad de exponerlos a internet."
 startup: "system"
 boot: "auto"
 init: false
@@ -15,13 +15,15 @@ map:
   - config:rw
 
 options:
-  vps_host: ""
+  vps_host: "vps.ejemplo.com"  # Valor predeterminado
   vps_port: 22
-  vps_user: ""
-  vps_password: ""
+  vps_user: "usuario"
+  vps_password: ""  # Si no se utiliza, se puede definir una clave SSH
+  ssh_key: ""  # Opción para definir clave SSH (si no se usa contraseña)
   remote_port: 2222
   local_port: 8123
   retry_interval: 10
+  retry_limit: 5  # Límite de reintentos
   http_port: 8099
 
 schema:
@@ -29,7 +31,9 @@ schema:
   vps_port: int
   vps_user: str
   vps_password: password?
+  ssh_key: str?
   remote_port: int
   local_port: int
   retry_interval: int
+  retry_limit: int
   http_port: int
